@@ -1,1 +1,16 @@
 node_modules
+# NPM
+node_modules
+npm-debug.log
+
+# Code Editor Settings
+.idea
+.vs
+.vscode
+
+# Build Generated Files
+src/app/**/*.js
+src/app/**/*.js.map
+
+
+
