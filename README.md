@@ -1,5 +1,46 @@
 # Heroes
 
+**I'm submitting a ...**  (check one with "x")
+```
+[x ] bug report => search github for a similar issue or PR before submitting
+[ ] feature request
+[ ] support request => Please do not submit support request here, instead see https://github.com/angular/angular/blob/master/CONTRIBUTING.md#question
+```
+
+**Current behavior**
+I try to implement simple app with silent login via auth token (sessionId). If no sessionId provided- fallback to login via username/password.
+Router or ActivatedRoute contains no query parameter from address 
+
+**Expected behavior**
+If I call app with this links:
+http://localhost:4200/hero/13?SessionId=98765&Extras1=testextras
+http://localhost:4200/heroes;id=13;SessionId=98765;Extras1=testextras
+i expect, that query  parameters "SessionId" and "Extras1" are available in Router or ActivatedRoute.
+i expect, that NO login page will be showed, i see page with Hero "Bombasto" or admin dashboard.
+
+If I call app with this links:
+http://localhost:4200/hero/13
+http://localhost:4200/admin
+i see, as expected, that login page will be showed, after login i see page with Hero "Bombasto" or admin dashboard.
+
+
+**Minimal reproduction of the problem with instructions**
+http://plnkr.co has no possibility to use many html pages -> i have prepared modified sample of heroes app from tutorial https://angular.io/docs/ts/latest/guide/router.html.
+Modified sample can be found at https://github.com/adoris/tour-of-heroes
+
+1. load and prepare app from: https://github.com/adoris/tour-of-heroes.git
+2. ng serve
+3. call browser http://localhost:4200/index_angular2.html
+4. use any link. I expect, that all links works.
+
+
+
+**Please tell us about your environment:**
+angular-cli, windows, vs code.
+
+* **Angular version:** 2.1.0
+
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
 
 ## Development server
