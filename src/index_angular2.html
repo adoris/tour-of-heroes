@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Heroes</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <a href="http://localhost:4200/admin">start.. admin -> login with username/password</a><br/>
+  <a href="http://localhost:4200/admin?SessionId=98765">start.. admin -> silent login with sessionId</a><br/>
+  <a href="http://localhost:4200/admin;SessionId=98765">start.. admin -> silent login with sessionId, matrix param</a><br/>
+  <a href="http://localhost:4200/hero/13?SessionId=98765&Extras1=testextras">start.. hero 13 + extra param</a><br/>
+  <a href="http://localhost:4200/heroes;id=13;SessionId=98765;Extras1=testextras">start.. hero 13 with matrix param</a><br/>
+</body>
+</html>

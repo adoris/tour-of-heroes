@@ -11,7 +11,7 @@ import { AuthService }        from '../auth.service';
     <p>Dashboard</p>
 
     <p>Session ID from params: {{ sessionId | async }}</p>
-    <p>Session ID drom AuthService: {{ authService.sessionId }}</p>
+    <p>Session ID from AuthService: {{ authService.sessionId }}</p>
     <a id="anchor"></a>
     <p>Token: {{ token | async }}</p>
   `

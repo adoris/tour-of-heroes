@@ -42,14 +42,24 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
 
-    // Create a dummy session id
+    // ----------------------------------------------------------------------
+    // ----------------------------------------------------------------------
+    // ----------------------------------------------------------------------
+    //  !!! Expect here to get session id "98765" from queryParams 
+    // or matrix params from url:
+    // http://localhost:4200/hero/13?SessionId=98765&Extras1=testextras
+    // 
     let sessionId = 123456789;
+    // ----------------------------------------------------------------------
+    // ----------------------------------------------------------------------
+    // ----------------------------------------------------------------------
+    // ----------------------------------------------------------------------
 
     // Set our navigation extras object
-    // that contains our global query params and fragment
+    // to preserve query params for login page
     let navigationExtras: NavigationExtras = {
-      queryParams: { 'session_id': sessionId },
-      fragment: 'anchor'
+      preserveQueryParams: true,
+      preserveFragment: true,
     };
 
     // Navigate to the login page with extras
@@ -58,10 +68,3 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     return false;
   }
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

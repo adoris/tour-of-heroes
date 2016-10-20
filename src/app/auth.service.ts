@@ -29,10 +29,10 @@ export class AuthService {
   }
 
   loginBySessionId(sessionId: string): Observable<boolean> {
-    if (sessionId && sessionId == '12345'){
+    if (sessionId && (sessionId == '12345' || sessionId == '98765')){
       return Observable.of(true).delay(1000).do(val => {
         this.isLoggedIn = true;
-        this.sessionId = '12345';
+        this.sessionId = sessionId;
       });
     }
     return Observable.of(false).delay(1000).do(val => this.isLoggedIn = false);
